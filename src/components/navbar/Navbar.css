@@ -1,0 +1,16 @@
+@media (min-width: 1024px) and (max-width: 1110px) {
+    .style-navbar {
+        display: none !important;
+    }
+    .style-navbar2 {
+        display: flex !important;
+        width: 130px;
+    }
+    .style-navbar3 {
+        display: block !important;
+        width: 10px;
+    }
+    #result-search {
+        margin-top: 60px;
+    }
+}
