@@ -8,6 +8,7 @@ import { fetchNewPassword, selectNewPassword } from "../../redux/features/user/u
 import { HiInformationCircle } from "react-icons/hi";
 import { Alert } from "flowbite-react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import loading from "../../assets/video/loading.mp4";
 
 const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
 
@@ -69,7 +70,7 @@ export default function NewPassword() {
           loop
           preload="auto"
         >
-          <source src="src/assets/video/loading.mp4" type="video/mp4" />
+          <source src={loading} type="video/mp4" />
         </video>
       </div>
     </section>

@@ -7,6 +7,7 @@ import { fetchEmailOtp, selectUserPassword } from "../../redux/features/user/use
 import { useLocation, useNavigate } from "react-router-dom";
 import { HiInformationCircle } from "react-icons/hi";
 import { Alert } from "flowbite-react";
+import loading from "../../assets/video/loading.mp4";
 
 const initialValues = {
   otp: Array(6).fill("")
@@ -90,7 +91,7 @@ export default function VerifyOTP() {
           loop
           preload="auto"
         >
-          <source src="src/assets/video/loading.mp4" type="video/mp4" />
+          <source src={loading} type="video/mp4" />
         </video>
       </div>
     </section>

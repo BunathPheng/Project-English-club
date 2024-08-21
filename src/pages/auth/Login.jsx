@@ -15,6 +15,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import loading from "../../assets/video/loading.mp4";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -90,7 +91,7 @@ export default function Login() {
           loop
           preload="auto"
         >
-          <source src="src/assets/video/loading.mp4" type="video/mp4" />
+          <source src={loading} type="video/mp4" />
         </video>
       </div>
   </section>
