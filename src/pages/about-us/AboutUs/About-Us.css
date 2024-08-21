@@ -1,11 +1,10 @@
-
-.swiper-button-prev
-{
-    display: none !important;
-}
 .swiper-button-next
 {
-    display: none !important;
+    display: none;
+}
+.swiper-button-prev
+{
+    display: none;
 }
 .swiper-slide-active{
     padding: 0;
