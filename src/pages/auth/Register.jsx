@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import loading from "../../assets/video/loading.mp4";
 
 const strongPasswordRegex =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
@@ -96,7 +97,7 @@ export default function Register() {
           loop
           preload="auto"
         >
-          <source src="src/assets/video/loading.mp4" type="video/mp4" />
+          <source src={loading} type="video/mp4" />
         </video>
       </div>
     </section>

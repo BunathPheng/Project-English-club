@@ -17,7 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUsers } from "../../redux/verify/verifyUserSlice";
 import { fetchUserData } from "../../redux/verify/verifyUserSlice";
 import { getAccessToken } from "../../lib/secureLocalStorage";
-import { fetchUpdateUserInfo } from "../../redux/features/user/userSlice";
+import { fetchUpdateUserInfo, logout } from "../../redux/features/user/userSlice";
 import {
   selectFileURL,
   fetchUploadFile,
@@ -35,6 +35,13 @@ import {
   fetchExcersices,
   selectExcersice,
 } from "../../redux/features/lessondetail/lessondetailSlice";
+import completion from "../../assets/img/completion.png";
+import Listening10 from "../../assets/img/Listening10.png";
+import reading10 from "../../assets/img/reading10.png";
+import speaking10 from "../../assets/img/speaking10.png";
+import writing from "../../assets/img/writing.png";
+import vocabulary from "../../assets/img/vocabulary.png";
+import garmmar1 from "../../assets/img/garmmar1.png";
 
 export default function Dashboard() {
   const validationSchema = Yup.object({
@@ -272,6 +279,10 @@ const total = (
     },
   ];
 
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <section>
       <nav className="fixed top-0 z-50 w-full bg-gray-100 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -370,15 +381,20 @@ const total = (
                 <span className="ms-3">ព័ត៍មានអ្នកប្រើប្រាស់</span>
               </a>
             </li>
+            {getAccessToken()?(
             <li>
-              <a
-                href="/login"
-                className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-white group"
+              <div
+                className="flex items-center cursor-pointer p-2 text-gray-900 rounded-lg hover:bg-white group"
+                data-modal-target="popup-modal"
+                data-modal-toggle="popup-modal"
               >
                 <BsBoxArrowInLeft className="text-xl text-gray-500 group-hover:text-gray-900" />
                 <span className="ms-2">ការចាកចេញ</span>
-              </a>
+              </div>
             </li>
+            ) : (
+              ""
+            )}
           </ul>
         </div>
       </aside>
@@ -528,7 +544,7 @@ const total = (
               </div>
               <img
                 className="h-[300px]"
-                src="src/assets/img/completion.png"
+                src={completion}
                 alt="Completion"
               />
             </div>
@@ -550,7 +566,7 @@ const total = (
                   <div className="p-6">
                     <img
                       className="h-[56px] object-cover -ml-5"
-                      src="src/assets/img/listening.png"
+                      src={Listening10}
                       alt="listening"
                     />
                     <p className="text-md font-medium pt-4">A1</p>
@@ -597,7 +613,7 @@ const total = (
                   <div className="p-6">
                     <img
                       className="h-[56px] object-cover -ml-8"
-                      src="src/assets/img/reading10.png"
+                      src={reading10}
                       alt="reading"
                     />
                     <p className="text-md font-medium pt-4">A2</p>
@@ -644,7 +660,7 @@ const total = (
                   <div className="p-6">
                     <img
                       className="h-[56px] object-cover -ml-6"
-                      src="src/assets/img/speaking10.png"
+                      src={speaking10}
                       alt="speaking"
                     />
                     <p className="text-md font-medium pt-4">B1</p>
@@ -691,7 +707,7 @@ const total = (
                   <div className="p-6">
                     <img
                       className="h-[56px] object-cover -ml-6"
-                      src="src/assets/img/writing.png"
+                      src={writing}
                       alt="writing"
                     />
                     <p className="text-md font-medium pt-4">B2</p>
@@ -738,7 +754,7 @@ const total = (
                   <div className="p-6">
                     <img
                       className="h-[56px] object-cover -ml-6"
-                      src="src/assets/img/vocabulary.png"
+                      src={vocabulary}
                       alt="vocabulary"
                     />
                     <p className="text-md font-medium pt-4">C1</p>
@@ -785,7 +801,7 @@ const total = (
                   <div className="p-6">
                     <img
                       className="h-[56px] object-cover -ml-6"
-                      src="src/assets/img/garmmar1.png"
+                      src={garmmar1}
                       alt="grammar"
                     />
                     <p className="text-md font-medium pt-4">C2</p>
@@ -829,6 +845,71 @@ const total = (
           </div>
         </div>
       </div>
+
+      <section>
+        <div
+          id="popup-modal"
+          tabIndex="-1"
+          className="w-full hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+          <div className="relative p-4 w-full max-w-md max-h-full">
+            <div className="md:w-[550px] md:right-16 lg:right-16 relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <button
+                type="button"
+                className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="popup-modal"
+              >
+                <svg
+                  className="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+                <span className="sr-only">Close modal</span>
+              </button>
+              <div className="grid grid-cols-1 p-4 md:p-5 text-center">
+                <div className="w-32 mx-auto object-cover mt-8 mb-4 text-gray-400 dark:text-gray-200">
+                  <img
+                    src="https://english-api.cstad.shop/files/077018c8-ccc4-4a1a-bb45-30deafd41b8e.png"
+                    alt="logo/image"
+                  />
+                </div>
+                <h3 className="mb-5 py-4 text-lg font-normal text-gray-500 dark:text-gray-400">
+                  តើ​អ្នក​ប្រាកដ​ជា​ចង់ចាកចេញឬ?
+                </h3>
+
+                <button
+                  data-modal-hide="popup-modal"
+                  type="button"
+                  className="py-3 px-5 mb-2.5 ms-3 text-lg font-medium text-gray-600 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-900 focus:z-10  dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                >
+                  បន្តការចូលគណនី
+                </button>
+                {getAccessToken() && (
+                  <Link
+                    onClick={handleLogout}
+                    as={Link}
+                    to="/"
+                    data-modal-hide="popup-modal"
+                    className="py-3.5 px-5 mb-2 ms-3 text-lg text-white font-medium focus:outline-none bg-red-600 rounded-lg border border-gray-200 hover:bg-red-800 focus:z-10  dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                  >
+                    ការចាកចេញ
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

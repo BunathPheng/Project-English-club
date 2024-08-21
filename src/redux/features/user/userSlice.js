@@ -149,7 +149,7 @@ export const fetchUpdateUserInfo = createAsyncThunk(
             bio
         });
 
-        const response = await fetch(`https://english-api.cstad.shop/users/${user_uuid}/`, {
+        const response = await fetch(`https://english-api.cstad.shop/users/${user_uuid}`, {
             method: "PUT",
             headers: {
                 "Authorization": `Bearer ${token}`,
