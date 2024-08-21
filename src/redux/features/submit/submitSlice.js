@@ -1,12 +1,13 @@
 // src/redux/exerciseSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+const apiUrl = import.meta.env.VITE_BASE_URL.replace(/^http:/, "https:");
 export const submitAnswer = createAsyncThunk(
     'exercise/submitAnswer',
     async(data, { rejectWithValue }) => {
         const { uuid, ...body } = data;
         //console.log("data:" , data);
         try {
-            const response = await fetch(`https://english-api.cstad.shop/exercise/${uuid}/submit_answer`, {
+            const response = await fetch(`${apiUrl}/exercise/${uuid}/submit_answer`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

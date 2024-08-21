@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { BASE_URL } from "../../api";
 // Base URL for your API
-
+const apiUrl = import.meta.env.VITE_BASE_URL.replace(/^http:/, "https:");
 const initialState = {
     resubmit: {},
     status: "idle",
@@ -19,7 +19,7 @@ export const fetchResubmitExercise = createAsyncThunk(
         });
 
         try {
-            const response = await fetch(`https://english-api.cstad.shop/exercise/submit_answer/try_again`, {
+            const response = await fetch(`${apiUrl}/exercise/submit_answer/try_again`, {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json'
