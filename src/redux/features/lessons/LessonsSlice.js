@@ -8,11 +8,11 @@ const initialState = {
     status: "idle",
     error: null
 }
-
+const apiUrl = import.meta.env.VITE_BASE_URL.replace(/^http:/, "https:");
 export const fetchLessons = createAsyncThunk(
     "Lessons/fetchLessons",
     async () => {
-        const response = await fetch(`https://english-api.cstad.shop/lessons/`);
+        const response = await fetch(`${apiUrl}/lessons`);
         const data = await response.json();
         return data.payload;
     }
@@ -21,7 +21,7 @@ export const fetchLessons = createAsyncThunk(
 export const fetchLessonsById = createAsyncThunk(
     "Lessons/fetchLessonsById",
     async (uuid) => {
-        const response = await fetch(`https://english-api.cstad.shop/lessons/detail/?uuid=${uuid}/`);
+        const response = await fetch(`https://english-api.cstad.shop/lessons/detail/?uuid=${uuid}`);
         const data = await response.json();
         return data.payload;
     }
