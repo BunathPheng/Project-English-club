@@ -9,6 +9,9 @@ import "aos/dist/aos.css";
 import Aos from "aos";
 import { useEffect, useState } from "react";
 import LoadingAboutUs from "../../../components/common/loading/LoadingAboutUs";
+import bannerOne from "../../../assets/img/banner2.jpg";
+import bannerTwo from "../../../assets/img/banner1.jpg";
+import bannerTree from "../../../assets/img/banner3.jpg";
 export default function AboutUs() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -47,21 +50,21 @@ export default function AboutUs() {
           <SwiperSlide>
             <img
               className="w-full h-full object-cover"
-              src="src/assets/img/banner2.jpg"
+              src={bannerOne}
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               className="w-full h-full object-cover"
-              src="src/assets/img/banner1.jpg"
+              src={bannerTwo}
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               className="w-full h-full object-cover"
-              src="src/assets/img/banner3.jpg"
+              src={bannerTree}
               alt=""
             />
           </SwiperSlide>
