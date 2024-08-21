@@ -13,7 +13,7 @@ const initialState = {
 const apiUrl = import.meta.env.VITE_BASE_URL.replace(/^http:/, "https:");
 
 export const fetchSkills = createAsyncThunk("skill/fetchSkills", async () => {
-  const response = await fetch(`${apiUrl}/skills`);
+  const response = await fetch(`${apiUrl}/skills/`);
   const data = await response.json();
   return data.payload;
 });

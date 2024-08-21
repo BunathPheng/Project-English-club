@@ -61,7 +61,7 @@ export default function SkillPage() {
     <>
       <section className="flex lg:flex-row flex-col items-center gap-x-40 lg:justify-center w-[100%] px-[20px] md:px-[40px] mx-auto">
         <div className="lg:mt-20 mt-10">
-          <h1 className="text-blues text-3xl font-bold ">
+          <h1 className="text-blues text-2xl font-bold ">
             ជំនាញក្នុងការរៀនភាសាអង់គ្លេស
           </h1>
           <p className="text-blues text-xl my-5 font-suwannaphum">
