@@ -121,7 +121,7 @@ export const fetchUserLogin = createAsyncThunk(
             email,
             password,
         });
-        const response = await fetch(`https://english-api.cstad.shop/login/`, {
+        const response = await fetch(`https://english-api.cstad.shop/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

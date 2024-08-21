@@ -19,7 +19,7 @@ export const fetchResubmitExercise = createAsyncThunk(
         });
 
         try {
-            const response = await fetch(`${apiUrl}/exercise/submit_answer/try_again/`, {
+            const response = await fetch(`${apiUrl}/exercise/submit_answer/try_again`, {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json'
