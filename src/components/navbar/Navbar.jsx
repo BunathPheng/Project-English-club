@@ -225,7 +225,7 @@ export default function Navbar() {
                 )}
               </div>
               <div
-                className={`z-50  my-4 text-base list-none bg-white ${
+                className={`z-50 hidden my-4 text-base list-none bg-white ${
                   getAccessToken() ? "divide-y divide-gray-100" : ""
                 } rounded shadow`}
                 id="dropdown-user"
