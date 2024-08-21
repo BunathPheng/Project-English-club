@@ -1,6 +1,6 @@
 import { BASE_URL } from "../api";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+const apiUrl = import.meta.env.VITE_BASE_URL.replace(/^http:/, "https:");
 // Create the async thunk using fetch
 export const fetchUserData = createAsyncThunk(
   "user/fetchUserData",
@@ -21,7 +21,7 @@ export const fetchUserData = createAsyncThunk(
 
     try {
       const response = await fetch(
-        `https://english-api.cstad.shop/users/me/`,
+        `${apiUrl}/users/me`,
         requestOptions
       );
       if (!response.ok) {

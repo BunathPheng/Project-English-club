@@ -13,6 +13,7 @@ import videos from "../../assets/video/videonew.mp4";
 import imgHomePage1 from "../../assets/img/Nerd-amico.png";
 import imgHomePage2 from "../../assets/img/Learning-bro.png";
 import imgHomePage3 from "../../assets/img/Education-cuate.png";
+import logomain from "../../assets/img/logo.png";
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -65,7 +66,7 @@ export default function HomePage() {
           className="absolute w-[80%] md:w-[40%] bg-gray-50 bg-opacity-80 pt-4 md:px-[40px] px-[20px]
          rounded-tr-[40px] left-[0%]  -bottom-1 md:-bottom-2"
         >
-          <img className="mb-4 w-[90px] object-cover" src={imgHomePage2} />
+          <img className="mb-4 w-[90px] object-cover" src={logomain} />
           <p className="text-blues text-[18px]  leading-8 text-justify">
             រៀនភាសាអង់គ្លេសតាមអ៊ីនធឺណិតនិងបង្កើនជំនាញរបស់អ្នកតាមរយៈវគ្គសិក្សានិងធនធានដែលមានគុណភាពខ្ពស់របស់យើង។
           </p>
@@ -150,7 +151,7 @@ export default function HomePage() {
               </div>
               <div className="grid place-items-end order-first md:order-last">
                 <img
-                  src={imgHomePage3}
+                  src={imgHomePage2}
                   alt="Illustration 2"
                   className="w-[500px] object-cover"
                   data-aos="zoom-in-up"
@@ -161,7 +162,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
               <div className="grid place-items-start">
                 <img
-                  src={imgHomePage2}
+                  src={imgHomePage3}
                   alt="Illustration 1"
                   className="w-[500px] object-cover"
                   data-aos="zoom-in-up"
