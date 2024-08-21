@@ -23,6 +23,7 @@ import LoadingSkillGrammar from "../../components/common/loading/LoadingSkillGra
 export default function SkillGrammarPage() {
   const param = useParams();
   const [skillGrammar, setskillGrammar] = useState([]);
+
   let names = "";
   let img = null;
   let title = "";
@@ -50,9 +51,10 @@ export default function SkillGrammarPage() {
     setskillGrammar(filteredSkills);
   }, [grammars]);
 
-  if(isLoading){
-    return <LoadingSkillGrammar/>;
+  if (isLoading) {
+    return <LoadingSkillGrammar />;
   }
+
   return (
     <>
       <div className="relative w-[100%] mx-auto">
