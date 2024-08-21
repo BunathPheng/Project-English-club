@@ -58,7 +58,13 @@ export default function Navbar() {
   }, [dispatch, token]);
 
   const user = useSelector(selectUsers);
-  const userProfile = useSelector(selectUserProfile);
+  const profile = useSelector(selectUserProfile);
+  const newBaseUrl = "https://english-api.cstad.shop";
+  const userProfile = profile && profile.includes("http://136.228.158.126:50005") 
+  ? profile.replace("http://136.228.158.126:50005", newBaseUrl) 
+  : profile || ""; 
+  console.log("token:",token);
+  console.log("userProfile:",userProfile);
 
   const handleClick = () => {
     setClickCount(clickCount + 1); // Increment click count on any click
