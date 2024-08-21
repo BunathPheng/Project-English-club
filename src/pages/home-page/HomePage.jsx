@@ -65,10 +65,7 @@ export default function HomePage() {
           className="absolute w-[80%] md:w-[40%] bg-gray-50 bg-opacity-80 pt-4 md:px-[40px] px-[20px]
          rounded-tr-[40px] left-[0%]  -bottom-1 md:-bottom-2"
         >
-          <img
-            className="mb-4 w-[90px] object-cover"
-            src={}
-          />
+          <img className="mb-4 w-[90px] object-cover" src={imgHomePage2} />
           <p className="text-blues text-[18px]  leading-8 text-justify">
             រៀនភាសាអង់គ្លេសតាមអ៊ីនធឺណិតនិងបង្កើនជំនាញរបស់អ្នកតាមរយៈវគ្គសិក្សានិងធនធានដែលមានគុណភាពខ្ពស់របស់យើង។
           </p>
