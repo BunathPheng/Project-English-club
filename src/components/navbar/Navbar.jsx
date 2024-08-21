@@ -192,10 +192,16 @@ export default function Navbar() {
                   </a>
                 ) : (
                   <section>
-                    <button type="button" className="flex text-smrounded-full ">
+                    <button
+                      type="button"
+                      className="flex text-smrounded-full "
+                      aria-expanded="false"
+                      data-dropdown-toggle="dropdown-user"
+                    >
                       <span className="sr-only">Open user menu</span>
                       <div
                         className="ms-2"
+                        data-dropdown-toggle="dropdown-user"
                         data-dropdown-placement="bottom-start"
                       >
                         <div
@@ -219,7 +225,7 @@ export default function Navbar() {
                 )}
               </div>
               <div
-                className={`z-50 hidden my-4 text-base list-none bg-white ${
+                className={`z-50  my-4 text-base list-none bg-white ${
                   getAccessToken() ? "divide-y divide-gray-100" : ""
                 } rounded shadow`}
                 id="dropdown-user"
