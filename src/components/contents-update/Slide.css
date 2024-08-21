@@ -27,7 +27,7 @@
   background-size: 100% auto;
   background-position: center;
 }
-.swiper-button-prev::after
+.swiper-button-prev
 {
   display: none !important;
 }
@@ -38,7 +38,7 @@
   background-size: 100% auto;
   background-position: center;
 }
-.swiper-button-next::after
+.swiper-button-next
 {
   display: none !important;
 }
