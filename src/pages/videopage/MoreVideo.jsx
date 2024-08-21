@@ -3,6 +3,7 @@ import React from "react";
 import Videomore from "../../components/common/Videomore";
 import { lineWobble } from "ldrs";
 import { trefoil } from "ldrs";
+import image from "../../assets/img/kidbackground.jpg";
 
 trefoil.register();
 
@@ -24,7 +25,7 @@ export default function MoreVideo() {
     <section
       className="bg-cover  h-auto  pt-5 pb-10   "
       style={{
-        backgroundImage: `url(src/assets/kidbackground.jpg)`,
+        backgroundImage: `url(${image})`,
       }}
     >
       {" "}
