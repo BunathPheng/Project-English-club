@@ -192,16 +192,10 @@ export default function Navbar() {
                   </a>
                 ) : (
                   <section>
-                    <button
-                      type="button"
-                      className="flex text-smrounded-full "
-                      aria-expanded="false"
-                      data-dropdown-toggle="dropdown-user"
-                    >
+                    <button type="button" className="flex text-smrounded-full ">
                       <span className="sr-only">Open user menu</span>
                       <div
                         className="ms-2"
-                        data-dropdown-toggle="dropdown-user"
                         data-dropdown-placement="bottom-start"
                       >
                         <div
