@@ -14,7 +14,7 @@ export const fetchSkillNameLevel = createAsyncThunk(
     const skill_level = NameLevel[0];
     const skill_name = NameLevel[1];
     const response = await fetch(
-      `https://english-api.cstad.shop/skills/skill_name=${skill_name}/level=${skill_level}/`
+      `https://english-api.cstad.shop/skills/skill_name=${skill_name}/level=${skill_level}`
     );
     const data = await response.json();
     //console.log("data1", data.payload)
