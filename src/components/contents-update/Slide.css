@@ -27,6 +27,10 @@
   background-size: 100% auto;
   background-position: center;
 }
+.swiper-button-prev::after
+{
+  display: none !important;
+}
 .swiper-button-next
 {
   background-image: url('../../assets/img/next-circle.svg');
@@ -34,8 +38,7 @@
   background-size: 100% auto;
   background-position: center;
 }
-.swiper-button-next::after,
-.swiper-button-prev::after
+.swiper-button-next::after
 {
   display: none !important;
 }
