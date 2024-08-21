@@ -9,6 +9,10 @@ import skillListening from "../../assets/img/Listening2.png";
 import skillWritting from "../../assets/img/writting.png";
 import skillSpeaking from "../../assets/img/Speaking1.jpg";
 import skillReading from "../../assets/img/Skill_Reading.png";
+import videos from "../../assets/video/videonew.mp4";
+import imgHomePage1 from "../../assets/img/Nerd-amico.png";
+import imgHomePage2 from "../../assets/img/Learning-bro.png";
+import imgHomePage3 from "../../assets/img/Education-cuate.png";
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -37,10 +41,7 @@ export default function HomePage() {
           loop
           preload="auto"
         >
-          <source
-            src="https://english-api.cstad.shop/files/176fc750-d6e7-4e06-a9f2-f9ce37ddbc56.mp4"
-            type="video/mp4"
-          />
+          <source src={videos} type="video/mp4" />
         </video>
         <div className="bg-black bg-opacity-40 w-full h-full absolute top-0 left-0"></div>
         <div className="z-10 p-4 text-center sm:text-left max-w-2xl">
@@ -66,7 +67,7 @@ export default function HomePage() {
         >
           <img
             className="mb-4 w-[90px] object-cover"
-            src="https://english-api.cstad.shop/files/077018c8-ccc4-4a1a-bb45-30deafd41b8e.png"
+            src={}
           />
           <p className="text-blues text-[18px]  leading-8 text-justify">
             រៀនភាសាអង់គ្លេសតាមអ៊ីនធឺណិតនិងបង្កើនជំនាញរបស់អ្នកតាមរយៈវគ្គសិក្សានិងធនធានដែលមានគុណភាពខ្ពស់របស់យើង។
@@ -84,7 +85,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16 ">
               <div className="grid place-items-start">
                 <img
-                  src="https://english-api.cstad.shop/files/436e5a2c-afb4-4af0-97c4-d5249894017d.png"
+                  src={imgHomePage1}
                   alt="Illustration 1"
                   className="w-[500px] object-cover"
                   data-aos="zoom-in-up"
@@ -152,7 +153,7 @@ export default function HomePage() {
               </div>
               <div className="grid place-items-end order-first md:order-last">
                 <img
-                  src="https://english-api.cstad.shop/files/8bdd50ba-1871-44f2-a5fe-58e69a7e562a.png"
+                  src={imgHomePage3}
                   alt="Illustration 2"
                   className="w-[500px] object-cover"
                   data-aos="zoom-in-up"
@@ -163,7 +164,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
               <div className="grid place-items-start">
                 <img
-                  src="https://english-api.cstad.shop/files/54cd2c63-6e94-46c8-896b-eb7711aa1486.png"
+                  src={imgHomePage2}
                   alt="Illustration 1"
                   className="w-[500px] object-cover"
                   data-aos="zoom-in-up"

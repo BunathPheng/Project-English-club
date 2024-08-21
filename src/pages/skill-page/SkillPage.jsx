@@ -20,7 +20,7 @@ import LoadingSkill from "../../components/common/loading/LoadingSkill";
 import "../../pages/about-us/AboutUs/About-Us.css";
 import Aos from "aos";
 export default function SkillPage() {
-  const img = [skillSpeaking, skillListening, skillWritting, skillReading];
+  const img = [skillReading, skillWritting, skillListening, skillSpeaking];
   const title = [
     "នៅទីនេះអ្នកអាចស្វែងរកសកម្មភាពដើម្បីអនុវត្តជំនាញស្តាប់របស់អ្នក។ ការស្តាប់នឹងជួយអ្នកឱ្យប្រសើរឡើងនូវការយល់ដឹងរបស់អ្នកអំពីភាសា និងការបញ្ចេញសំឡេងរបស់អ្នក។",
     "នៅទីនេះអ្នកអាចស្វែងរកសកម្មភាពដើម្បីអនុវត្តជំនាញអានរបស់អ្នក។ ការអាននឹងជួយអ្នកឱ្យប្រសើរឡើងនូវការយល់ដឹងរបស់អ្នកអំពីភាសា និងបង្កើតវាក្យសព្ទរបស់អ្នក។",

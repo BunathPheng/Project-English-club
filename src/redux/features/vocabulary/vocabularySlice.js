@@ -14,7 +14,7 @@ const apiUrl = import.meta.env.VITE_BASE_URL.replace(/^http:/, "https:");
 export const fetchvocabularys = createAsyncThunk(
   "vocabulary/fetchVocabulary",
   async () => {
-    const response = await fetch(`${apiUrl}/vocabularies`);
+    const response = await fetch(`${apiUrl}/vocabularies/`);
     const data = await response.json();
     return data.payload;
   }
