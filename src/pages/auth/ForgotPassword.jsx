@@ -7,6 +7,7 @@ import { fetchVerifyEmail, selectUserEmail } from "../../redux/features/user/use
 import { useNavigate } from "react-router-dom";
 import { HiInformationCircle } from "react-icons/hi";
 import { Alert } from "flowbite-react";
+import loading from "../../assets/video/loading.mp4";
 
 const initialValues = {
   email: ""
@@ -52,7 +53,7 @@ export default function ForgotPassword() {
           loop
           preload="auto"
         >
-          <source src="src/assets/video/loading.mp4" type="video/mp4" />
+          <source src={loading} type="video/mp4" />
         </video>
       </div>
     </section>
