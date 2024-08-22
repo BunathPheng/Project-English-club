@@ -58,7 +58,14 @@ export default function Navbar() {
   }, [dispatch, token]);
 
   const user = useSelector(selectUsers);
-  const userProfile = useSelector(selectUserProfile);
+  const profile = useSelector(selectUserProfile);
+  const newBaseUrl = "https://english-api.cstad.shop";
+  const userProfile =
+    profile && profile.includes("http://136.228.158.126:50005")
+      ? profile.replace("http://136.228.158.126:50005", newBaseUrl)
+      : profile || "";
+  console.log("token:", token);
+  console.log("userProfile:", userProfile);
 
   const handleClick = () => {
     setClickCount(clickCount + 1); // Increment click count on any click
@@ -192,10 +199,16 @@ export default function Navbar() {
                   </a>
                 ) : (
                   <section>
-                    <button type="button" className="flex text-smrounded-full ">
+                    <button
+                      type="button"
+                      className="flex text-smrounded-full "
+                      aria-expanded="false"
+                      data-dropdown-toggle="dropdown-user"
+                    >
                       <span className="sr-only">Open user menu</span>
                       <div
                         className="ms-2"
+                        data-dropdown-toggle="dropdown-user"
                         data-dropdown-placement="bottom-start"
                       >
                         <div
@@ -415,7 +428,9 @@ export default function Navbar() {
                 </Link>
                 <ul
                   id="dropdown-example1"
-                  className="hidden lg:hidden text-grays py-2 space-y-2 font-normal"
+                  className={` ${
+                    isOpen1 ? "block" : "hidden"
+                  } lg:hidden text-grays py-2 space-y-2 font-normal`}
                 >
                   {skillList.map((skill, index) => {
                     return (

@@ -101,7 +101,7 @@ export const fetchNewPassword = createAsyncThunk(
             new_password,
             confirm_password,
         });
-        const response = await fetch(`https://english-api.cstad.shop/reset-password/`, {
+        const response = await fetch(`https://english-api.cstad.shop/reset-password`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -15,7 +15,7 @@ import LoadingExerciseGrammar from "../../components/common/loading/LoadingExerc
 export default function IELTSSkill() {
   const param = useParams();
   const newname = param["ielts-name"];
-  const titles = newname.replace("ietls", "b1");
+  const titles = newname.replace("ielts", "b1");
   const ietls = useSelector(selectNameLevel);
   const stauss = useSelector((state) => state.skillNameLevel.status);
   const [ieltsLevels, setietlsLevels] = useState([]);
