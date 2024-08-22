@@ -363,8 +363,8 @@ export default function Navbar() {
             </div>
             <ul className="text-[16px] min-[1024px]:text-[15px] min-[1111px]:text-[16px] flex flex-col p-4 lg:p-0 mt-4 text-grays text-md border rounded-lg lg:space-x-4 xl:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white">
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className={`block py-2 px-3 font-bold text-grays lg:p-0 ${
                     location.pathname === "/"
                       ? "text-primary bg-gray-100 rounded lg:bg-transparent"
@@ -373,7 +373,7 @@ export default function Navbar() {
                   aria-current="page"
                 >
                   ទំព័រដើម
-                </a>
+                </Link>
               </li>
               <li>
                 <Link to="/skills">
@@ -653,8 +653,8 @@ export default function Navbar() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/ielts"
+                <Link
+                  to="/ielts"
                   className={`block py-2 px-3 font-bold text-grays lg:p-0 ${
                     location.pathname.includes("/ielts")
                       ? "text-primary bg-gray-100 rounded lg:bg-transparent"
@@ -663,11 +663,11 @@ export default function Navbar() {
                   aria-current="page"
                 >
                   IELTS
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/more-videos"
+                <Link
+                  to="/more-videos"
                   className={`block py-2 px-3 font-bold text-grays lg:p-0 ${
                     location.pathname === "/more-videos"
                       ? "text-primary bg-gray-100 rounded lg:bg-transparent"
@@ -676,7 +676,7 @@ export default function Navbar() {
                   aria-current="page"
                 >
                   វីដេអូជំនួយ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
