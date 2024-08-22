@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { BASE_URL } from "../../api";
 // Base URL for your API
-const apiUrl = import.meta.env.VITE_BASE_URL.replace(/^http:/, "https:");
+const apiUrl =
+    import.meta.env.VITE_BASE_URL.replace(/^http:/, "https:");
 const initialState = {
     resubmit: {},
     status: "idle",
