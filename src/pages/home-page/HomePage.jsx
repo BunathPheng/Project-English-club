@@ -36,10 +36,11 @@ export default function HomePage() {
     <section className="bg-gray-50">
       <div className="relative flex w-full h-[700px] items-center justify-center overflow-hidden">
         <video
-          className="absolute top-0 left-0 w-full h-[700px] object-cover opacity-90 bg-opacity-90"
+          className="absolute top-0 left-0 w-full h-screen object-cover opacity-90 bg-opacity-90"
           autoPlay
           muted
           loop
+          playsInline
           preload="auto"
         >
           <source src={videos} type="video/mp4" />
