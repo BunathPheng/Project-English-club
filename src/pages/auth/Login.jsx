@@ -99,7 +99,7 @@ export default function Login() {
       </div>
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
         <video
-          className="absolute top-0 left-0 w-full h-screen object-cover opacity-90 bg-opacity-90"
+          className="w-full h-full object-cover opacity-55"
           autoPlay
           muted
           loop
