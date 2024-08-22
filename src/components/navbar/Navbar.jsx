@@ -363,8 +363,8 @@ export default function Navbar() {
             </div>
             <ul className="text-[16px] min-[1024px]:text-[15px] min-[1111px]:text-[16px] flex flex-col p-4 lg:p-0 mt-4 text-grays text-md border rounded-lg lg:space-x-4 xl:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white">
               <li>
-                <Link
-                  to="/"
+                <a
+                  href="/"
                   className={`block py-2 px-3 font-bold text-grays lg:p-0 ${
                     location.pathname === "/"
                       ? "text-primary bg-gray-100 rounded lg:bg-transparent"
@@ -373,7 +373,7 @@ export default function Navbar() {
                   aria-current="page"
                 >
                   ទំព័រដើម
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/skills">
@@ -427,7 +427,6 @@ export default function Navbar() {
                   </button>
                 </Link>
                 <ul
-                  id="dropdown-example1"
                   className={` ${
                     isOpen1 ? "block" : "hidden"
                   } lg:hidden text-grays py-2 space-y-2 font-normal`}
@@ -515,8 +514,9 @@ export default function Navbar() {
                   </button>
                 </Link>
                 <ul
-                  id="dropdown-example2"
-                  className="hidden lg:hidden text-grays py-2 space-y-2 font-normal"
+                  className={` ${
+                    isOpen2 ? "block" : "hidden"
+                  } lg:hidden text-grays py-2 space-y-2 font-normal`}
                 >
                   {grammmarLevelList.map((gLevel, index) => {
                     return (
@@ -600,8 +600,9 @@ export default function Navbar() {
                   </button>
                 </Link>
                 <ul
-                  id="dropdown-example3"
-                  className="hidden lg:hidden text-gray-700 hover:text-primary py-2 space-y-2 font-normal"
+                  className={` ${
+                    isOpen3 ? "block" : "hidden"
+                  } lg:hidden text-grays py-2 space-y-2 font-normal`}
                 >
                   {vocabularyLevelList.map((vLevel, index) => {
                     return (
@@ -639,8 +640,8 @@ export default function Navbar() {
                 </div>
               </li>
               <li>
-                <Link
-                  to="/about-us"
+                <a
+                  href="/about-us"
                   className={`block py-2 px-3 font-bold text-grays lg:p-0 ${
                     location.pathname === "/about-us"
                       ? "text-primary bg-gray-100 rounded lg:bg-transparent"
@@ -649,11 +650,11 @@ export default function Navbar() {
                   aria-current="page"
                 >
                   អំពីពួក​យើង
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/ielts"
+                <a
+                  href="/ielts"
                   className={`block py-2 px-3 font-bold text-grays lg:p-0 ${
                     location.pathname.includes("/ielts")
                       ? "text-primary bg-gray-100 rounded lg:bg-transparent"
@@ -662,11 +663,11 @@ export default function Navbar() {
                   aria-current="page"
                 >
                   IELTS
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/more-videos"
+                <a
+                  href="/more-videos"
                   className={`block py-2 px-3 font-bold text-grays lg:p-0 ${
                     location.pathname === "/more-videos"
                       ? "text-primary bg-gray-100 rounded lg:bg-transparent"
@@ -675,7 +676,7 @@ export default function Navbar() {
                   aria-current="page"
                 >
                   វីដេអូជំនួយ
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
