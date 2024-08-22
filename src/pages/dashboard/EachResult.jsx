@@ -6,11 +6,21 @@ import { getAccessToken } from "../../lib/secureLocalStorage";
 import { selectUsers, fetchUserData } from "../../redux/verify/verifyUserSlice";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchExcersices, selectExcersice } from "../../redux/features/lessondetail/lessondetailSlice";
-import { fetchSubmitExercisesByLevel, selectSubmitExercisesByLevel } from "../../redux/features/exerciseSubmit/exerciseSubmitSlice";
+import {
+  fetchExcersices,
+  selectExcersice,
+} from "../../redux/features/lessondetail/lessondetailSlice";
+import {
+  fetchSubmitExercisesByLevel,
+  selectSubmitExercisesByLevel,
+} from "../../redux/features/exerciseSubmit/exerciseSubmitSlice";
+const [isSidebarOpen, setSidebarOpen] = useState(false);
 
+const toggleSidebar = () => {
+  setSidebarOpen(!isSidebarOpen);
+};
 export default function EachResult() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [token, setToken] = useState("");
 
   useEffect(() => {
@@ -23,15 +33,17 @@ export default function EachResult() {
   }, [dispatch, token]);
   const user = useSelector(selectUsers);
   const userId = user?.user_uuid || "";
-  const {level} = useParams();
+  const { level } = useParams();
   // console.log("level:",level);
-  
-  useEffect(()=>{
-    if(userId && token){
-      const data = dispatch(fetchSubmitExercisesByLevel({ user_uuid: userId, token, level }));
+
+  useEffect(() => {
+    if (userId && token) {
+      const data = dispatch(
+        fetchSubmitExercisesByLevel({ user_uuid: userId, token, level })
+      );
       // console.log("data:",data)
     }
-  }, [dispatch, userId, token])
+  }, [dispatch, userId, token]);
 
   const submittedExerciseByLevel = useSelector(selectSubmitExercisesByLevel);
   // console.log("submittedExerciseByLevel:",submittedExerciseByLevel);
@@ -43,11 +55,9 @@ export default function EachResult() {
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start rtl:justify-end">
               <button
-                data-drawer-target="logo-sidebar"
-                data-drawer-toggle="logo-sidebar"
-                aria-controls="logo-sidebar"
+                onClick={toggleSidebar}
                 type="button"
-                className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
               >
                 <span className="sr-only">Open sidebar</span>
                 <svg
@@ -58,9 +68,9 @@ export default function EachResult() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </button>
@@ -83,7 +93,10 @@ export default function EachResult() {
                   >
                     <img
                       className="w-10 h-10 rounded-full"
-                      src={user?.profile || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WQTIyI3gDR7pusOaPAIGJKzMZ9aUxcfsJQ&s"}
+                      src={
+                        user?.profile ||
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WQTIyI3gDR7pusOaPAIGJKzMZ9aUxcfsJQ&s"
+                      }
                       alt="user photo"
                     />
                     <span className="self-center font-suwannaphum text-white text-lg pr-3 sm:text-lg ml-2 whitespace-nowrap hidden sm:block">
@@ -96,9 +109,16 @@ export default function EachResult() {
           </div>
         </div>
       </nav>
+      {isSidebarOpen && (
+        <div
+          onClick={toggleSidebar}
+          className="fixed inset-0 z-30 bg-black opacity-50 sm:hidden"
+        ></div>
+      )}
       <aside
-        id="logo-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen pt-24 transition-transform -translate-x-full bg-gray-100 border-r border-gray-200 sm:translate-x-0"
+        className={`fixed top-0 left-0 z-40 w-64 h-screen pt-24 transition-transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } bg-gray-100 border-r border-gray-200 sm:translate-x-0`}
         aria-label="Sidebar"
       >
         <div className="h-full px-3 pb-4 mt-2 overflow-y-auto bg-gray-100">
@@ -162,13 +182,22 @@ export default function EachResult() {
                     {submittedExerciseByLevel.map((exercise, index) => {
                       // Compute the date and formattedDate outside the JSX
                       const date = new Date(exercise?.complete_date);
-                      const formattedDate = date.toISOString().split('T')[0];
+                      const formattedDate = date.toISOString().split("T")[0];
 
                       return (
-                        <tr key={index} className="text-gray-700 border-b text-[12px] md:text-[16px]">
-                          <td className="py-5  pl-8 text-left">{exercise?.ex_title}</td>
+                        <tr
+                          key={index}
+                          className="text-gray-700 border-b text-[12px] md:text-[16px]"
+                        >
+                          <td className="py-5  pl-8 text-left">
+                            {exercise?.ex_title}
+                          </td>
                           {/* {console.log("exercise?.score", typeof(exercise?.scores))} */}
-                          <td className="py-5">{parseFloat(exercise?.scores) % 1 === 0 ? parseFloat(exercise?.scores).toFixed(0) : parseFloat(exercise?.scores).toFixed(2)}</td>
+                          <td className="py-5">
+                            {parseFloat(exercise?.scores) % 1 === 0
+                              ? parseFloat(exercise?.scores).toFixed(0)
+                              : parseFloat(exercise?.scores).toFixed(2)}
+                          </td>
                           <td className="py-5">{formattedDate}</td>
                         </tr>
                       );
