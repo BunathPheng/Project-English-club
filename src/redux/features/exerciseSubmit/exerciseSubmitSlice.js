@@ -43,19 +43,6 @@ export const fetchSubmitExercises = createAsyncThunk(
 
 // Fetch exercise data by level
 export const fetchSubmitExercisesByLevel = createAsyncThunk(
-<<<<<<< HEAD
-  "exerciseSubmit/fetchSubmitExercisesByLevel",
-  async ({ user_uuid, token, level }, { rejectWithValue }) => {
-    try {
-      const response = await fetch(
-        `${apiUrl}/exercise/submit_answer/userId=${user_uuid}/level=${level}`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-=======
     "exerciseSubmit/fetchSubmitExercisesByLevel",
     async({ user_uuid, token, level }, { rejectWithValue }) => {
         try {
@@ -81,7 +68,6 @@ export const fetchSubmitExercisesByLevel = createAsyncThunk(
         } catch (error) {
             //console.error("fetchSubmitExercisesByLevel error:", error);
             return rejectWithValue(error.message);
->>>>>>> e71b4fee4561cc6348354196e1fe2121eb8934b3
         }
     }
 );
