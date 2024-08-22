@@ -12,6 +12,25 @@ import LoadingAboutUs from "../../../components/common/loading/LoadingAboutUs";
 import bannerOne from "../../../assets/img/banner2.jpg";
 import bannerTwo from "../../../assets/img/banner1.jpg";
 import bannerTree from "../../../assets/img/banner3.jpg";
+import image1 from "../../../assets/img/mission.png";
+import image2 from "../../../assets/img/mission2.png";
+import chersmey from "../../../assets/img/Cher smey.png";
+import cherpheng from "../../../assets/img/cher pheng.png";
+import img1 from "../../../assets/img/b smey.png";
+import img2 from "../../../assets/img/bunath.png";
+import img3 from "../../../assets/img/bunthoeun.png";
+import img4 from "../../../assets/img/kanha.png";
+import img5 from "../../../assets/img/lina.png";
+import img6 from "../../../assets/img/sreylen.png";
+import img7 from "../../../assets/img/sophy.png";
+import img8 from "../../../assets/img/makara.png";
+import img9 from "../../../assets/img/yuhan.png";
+import cstad1 from "../../../assets/img/GroupTeamschool.png";
+import cstad2 from "../../../assets/img/action.jpg";
+import cstad3 from "../../../assets/img/action1.jpg";
+import cstad4 from "../../../assets/img/action3.jpg";
+import action1 from "../../../assets/img/FAQs-bro.png";
+import action2 from "../../../assets/img/Chat bot-bro.png";
 export default function AboutUs() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -117,7 +136,7 @@ export default function AboutUs() {
           <div className="w-full h-[200px] md:h-[350px] lg:h-[400px]">
             <img
               className="w-full h-full object-cover -ml-[8px] md:-ml-[16px]"
-              src="src/assets/img/mission.png"
+              src={image1}
               alt="Kids reading"
             />
           </div>
@@ -152,7 +171,7 @@ export default function AboutUs() {
           <div className="w-full h-[200px] md:h-[350px] lg:h-[400px] order-first lg:order-last">
             <img
               className="w-full h-full object-cover"
-              src="src/assets/img/mission2.png"
+              src={image2}
               alt="Business mission"
             />
           </div>
@@ -180,7 +199,7 @@ export default function AboutUs() {
             <div className="w-full h-full ml-2 md:ml-5">
               <img
                 className="w-4/5 object-cover"
-                src="src/assets/img/Cher smey.png"
+                src={chersmey}
                 alt="Mom Reksmey"
               />
             </div>
@@ -215,7 +234,7 @@ export default function AboutUs() {
             <div className="w-full h-full ml-2 md:ml-5">
               <img
                 className="w-4/5 object-cover"
-                src="src/assets/img/cher pheng.png"
+                src={cherpheng}
                 alt="Kim Chansokpheng"
               />
             </div>
@@ -263,7 +282,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/b smey.png"
+                  src={img1}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -307,7 +326,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/bunath.png"
+                  src={img2}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -349,7 +368,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/bunthoeun.png"
+                  src={img3}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -395,7 +414,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/kanha.png"
+                  src={img4}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -434,7 +453,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/makara.png"
+                  src={img8}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -478,7 +497,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/yuhan.png"
+                  src={img9}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -521,7 +540,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/lina.png"
+                  src={img5}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -564,7 +583,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/sreylen.png"
+                  src={img6}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -605,7 +624,7 @@ export default function AboutUs() {
               <div class="space-y-5">
                 <img
                   class="mx-auto rounded-full w-3/5 h-3/5"
-                  src="src/assets/img/sophy.png"
+                  src={img7}
                   alt="author avatar"
                 />
                 <div class="space-y-2">
@@ -658,24 +677,24 @@ export default function AboutUs() {
         <div className="mb-2 md:mb-4">
           <img
             className="w-full object-cover rounded-md"
-            src="src/assets/img/GroupTeamschool.png"
+            src={cstad1}
             alt=""
           />
         </div>
         <div className="grid grid-cols-3 gap-2 md:gap-4">
           <img
             className="rounded-md object-cover"
-            src="src/assets/img/action.jpg"
+            src={cstad2}
             alt=""
           />
           <img
             className="rounded-md object-cover"
-            src="src/assets/img/action1.jpg"
+            src={cstad3}
             alt=""
           />
           <img
             className="rounded-md object-cover"
-            src="src/assets/img/action3.jpg"
+            src={cstad4}
             alt=""
           />
         </div>
@@ -691,7 +710,7 @@ export default function AboutUs() {
           <div className="w-full h-full flex justify-end items-end order-first lg:order-last">
             <img
               className="w-[100%] md:w-[83%] h-full object-cover rounded-lg"
-              src="src/assets/img/FAQs-bro.png"
+              src={action1}
               alt="FAQ Illustration"
             />
           </div>
@@ -720,7 +739,7 @@ export default function AboutUs() {
       <section className="w-[90%] mx-auto grid lg:grid-cols-2 grid-cols-1 gap-4 items-center pb-8 md:-mt-16">
         <div className="flex justify-center items-cejustify-center">
           <img
-            src="src/assets/img/Chat bot-bro.png"
+            src={action2}
             alt="Chatbot Illustration"
             className="max-w-full w-10/12"
           />

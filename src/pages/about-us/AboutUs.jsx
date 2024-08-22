@@ -5,24 +5,22 @@ import "aos/dist/aos.css";
 import action from "../../assets/action.jpg";
 import action1 from "../../assets/action1.jpg";
 import action4 from "../../assets/img/action4.jpg";
+import team from "../../assets/img/Group1.png";
+import team1 from "../../assets/pic-main.png";
 import Marquee from "react-fast-marquee";
 export default function AboutUs() {
   AOS.init();
   return (
     <section>
       <div class="relative mx-auto lg:w-[1164px] w-full h-auto lg:h-[290px] flex justify-center lg:justify-start object-cover">
-        <img
-          className="w-full h-auto object-cover"
-          src="src/assets/Group1.png"
-          alt=""
-        />
+        <img className="w-full h-auto object-cover" src={team} alt="" />
       </div>
 
       <section class="flex flex-col md:flex-row gap-5 justify-center items-center ">
         <div class="relative overflow-hidden mt-16 mx-5 md:mx-20 W-[500px]">
           <img
             className="object-cover w-full h-auto"
-            src="src/assets/pic main.png"
+            src={team1}
             alt="Business mission"
           />
         </div>
