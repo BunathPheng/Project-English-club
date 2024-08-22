@@ -560,7 +560,7 @@ export default function Dashboard() {
           <p class="w-full h-[2px] bg-yellow-50 mb-4"></p>
           <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-clos-2 gap-4 newClasss">
             {/* A1 */}
-            <Link to={`/dashboard/a1`}>
+            <a href={`/dashboard/a1`}>
               <div className="transition-all duration-300 hover:scale-105">
                 <div className="grid grid-cols-2 bg-slate-50 rounded-lg">
                   <div className="p-6">
@@ -604,10 +604,8 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-            </Link>
-
-            {/* A2 */}
-            <Link to={`/dashboard/a2`}>
+            </a>            {/* A2 */}
+            <a href={`/dashboard/a2`}>
               <div className="transition-all duration-300 hover:scale-105">
                 <div className="grid grid-cols-2 bg-slate-50 rounded-lg">
                   <div className="p-6">
@@ -651,9 +649,8 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-            </Link>
-
-            <Link to={`/dashboard/b1`}>
+            </a>
+            <a href={`/dashboard/b1`}>
               {/* B1 */}
               <div className="transition-all duration-300 hover:scale-105">
                 <div className="grid grid-cols-2 bg-slate-50 rounded-lg">
@@ -698,10 +695,9 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-            </Link>
-
+            </a>
             {/* B2 */}
-            <Link to={`/dashboard/b2`}>
+            <a href={`/dashboard/b2`}>
               <div className="transition-all duration-300 hover:scale-105">
                 <div className="grid grid-cols-2 bg-slate-50 rounded-lg">
                   <div className="p-6">
@@ -745,10 +741,9 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-            </Link>
-
+            </a>
             {/* C1 */}
-            <Link to={`/dashboard/c1`}>
+            <a href={`/dashboard/c1`}>
               <div className="transition-all duration-300 hover:scale-105">
                 <div className="grid grid-cols-2 bg-slate-50 rounded-lg">
                   <div className="p-6">
@@ -792,10 +787,9 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-            </Link>
-
+            </a>
             {/* C2 */}
-            <Link to={`/dashboard/c2`}>
+            <a href={`/dashboard/c2`}>
               <div className="transition-all duration-300 hover:scale-105">
                 <div className="grid grid-cols-2 bg-slate-50 rounded-lg">
                   <div className="p-6">
@@ -841,8 +835,8 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-            </Link>
-          </div>
+            </a>
+            </div>
         </div>
       </div>
 
@@ -895,15 +889,14 @@ export default function Dashboard() {
                   បន្តការចូលគណនី
                 </button>
                 {getAccessToken() && (
-                  <Link
-                    onClick={handleLogout}
-                    as={Link}
-                    to="/"
+                  <a         
+                    onClick={handleLogout}                  
+                    href="/"
                     data-modal-hide="popup-modal"
                     className="py-3.5 px-5 mb-2 ms-3 text-lg text-white font-medium focus:outline-none bg-red-600 rounded-lg border border-gray-200 hover:bg-red-800 focus:z-10  dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                   >
                     ការចាកចេញ
-                  </Link>
+                  </a>
                 )}
               </div>
             </div>

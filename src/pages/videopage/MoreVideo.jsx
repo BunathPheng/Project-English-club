@@ -34,7 +34,7 @@ export default function MoreVideo() {
         <div className="flex flex-col justify-center items-center h-screen">
           {/* Replace with your preferred loading spinner */}
           <l-line-wobble
-            size="1000"
+            size="250"
             stroke="30"
             bg-opacity="0.1"
             speed="7"
