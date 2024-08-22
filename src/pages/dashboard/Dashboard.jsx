@@ -121,7 +121,9 @@ export default function Dashboard() {
         const uploadResult = await dispatch(
           fetchUploadFile({ file: selectedFile })
         ).unwrap();
-        const fileUrl = uploadResult.payload.file_urls[0].file_path;
+        const profile = uploadResult.payload.file_urls[0].file_path;
+        const newBaseUrl = "https://english-api.cstad.shop";
+        const fileUrl = profile && profile.includes("http://136.228.158.126:50005")? profile.replace("http://136.228.158.126:50005", newBaseUrl) : profile;
         // Update Formik field value and state with the new file URL
         setFieldValue("profile", fileUrl);
         setProfilePreview(fileUrl);
@@ -134,6 +136,8 @@ export default function Dashboard() {
 
   // console.log("user:", user?.user_uuid);
   const userId = user?.user_uuid || "";
+  console.log("userId:",userId);
+  console.log("token:",token);
 
   useEffect(() => {
     if (userId && token) {
@@ -169,12 +173,12 @@ export default function Dashboard() {
     }
   }, [dispatch, userId, token]);
 
-  const exerciseA1Data = exercises.A1.payload?.length;
-  const exerciseA2Data = exercises.A2.payload?.length;
-  const exerciseB1Data = exercises.B1.payload?.length;
-  const exerciseB2Data = exercises.B2.payload?.length;
-  const exerciseC1Data = exercises.C1.payload?.length;
-  const exerciseC2Data = exercises.C2.payload?.length;
+const exerciseA1Data = Array.isArray(exercises.A1?.payload) ? exercises.A1.payload.length : 0;
+const exerciseA2Data = Array.isArray(exercises.A2?.payload) ? exercises.A2.payload.length : 0;
+const exerciseB1Data = Array.isArray(exercises.B1?.payload) ? exercises.B1.payload.length : 0;
+const exerciseB2Data = Array.isArray(exercises.B2?.payload) ? exercises.B2.payload.length : 0;
+const exerciseC1Data = Array.isArray(exercises.C1?.payload) ? exercises.C1.payload.length : 0;
+const exerciseC2Data = Array.isArray(exercises.C2?.payload) ? exercises.C2.payload.length : 0;
   // console.log("exerciseA1Data:", exerciseA1Data);
 
   useEffect(() => {
@@ -196,9 +200,18 @@ export default function Dashboard() {
 
     return acc;
   }, {});
-  const numAllExercises = allExercises?.length;
-  const numAllSubmitExercises = submitExercises?.payload?.length;
-  const total = (numAllSubmitExercises / numAllExercises) * 100;
+  // const numAllExercises = allExercises?.length;
+  // const numAllSubmitExercises = submitExercises?.payload?.length;
+  // const total = (numAllSubmitExercises / numAllExercises) * 100;
+  
+const total = (
+  exerciseA1Data === 0 &&
+  exerciseA2Data === 0 &&
+  exerciseB1Data === 0 &&
+  exerciseB2Data === 0 &&
+  exerciseC1Data === 0 &&
+  exerciseC2Data === 0
+) ? 0 : 100;
   const totalA1 = parseFloat(
     ((exerciseA1Data / groupedExercises["A1"]?.length) * 100).toFixed()
   ) ||0;
@@ -261,7 +274,7 @@ export default function Dashboard() {
   const series = [
     {
       name: "Exercises",
-      data: [100, totalC2, totalC1, totalB2, totalB1, totalA2, totalA1],
+      data: [total, totalC2, totalC1, totalB2, totalB1, totalA2, totalA1],
       color: "#0EBC87",
     },
   ];
