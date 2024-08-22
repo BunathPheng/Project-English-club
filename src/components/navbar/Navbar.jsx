@@ -60,11 +60,12 @@ export default function Navbar() {
   const user = useSelector(selectUsers);
   const profile = useSelector(selectUserProfile);
   const newBaseUrl = "https://english-api.cstad.shop";
-  const userProfile = profile && profile.includes("http://136.228.158.126:50005") 
-  ? profile.replace("http://136.228.158.126:50005", newBaseUrl) 
-  : profile || ""; 
-  console.log("token:",token);
-  console.log("userProfile:",userProfile);
+  const userProfile =
+    profile && profile.includes("http://136.228.158.126:50005")
+      ? profile.replace("http://136.228.158.126:50005", newBaseUrl)
+      : profile || "";
+  console.log("token:", token);
+  console.log("userProfile:", userProfile);
 
   const handleClick = () => {
     setClickCount(clickCount + 1); // Increment click count on any click
@@ -427,7 +428,9 @@ export default function Navbar() {
                 </Link>
                 <ul
                   id="dropdown-example1"
-                  className="hidden lg:hidden text-grays py-2 space-y-2 font-normal"
+                  className={` ${
+                    isOpen1 ? "block" : "hidden"
+                  } lg:hidden text-grays py-2 space-y-2 font-normal`}
                 >
                   {skillList.map((skill, index) => {
                     return (
