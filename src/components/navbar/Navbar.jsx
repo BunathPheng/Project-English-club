@@ -119,6 +119,7 @@ export default function Navbar() {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
+  const [isOpen4, setIsOpen4] = useState(false);
   const toggleDropdown1 = () => {
     setIsOpen1(!isOpen1);
   };
@@ -127,6 +128,9 @@ export default function Navbar() {
   };
   const toggleDropdown3 = () => {
     setIsOpen3(!isOpen3);
+  };
+  const toggleDropdown4 = () => {
+    setIsOpen4(!isOpen4);
   };
   const skillList = [
     { data: "ការស្ដាប់", nav: "/skills/listening" },
@@ -203,12 +207,12 @@ export default function Navbar() {
                       type="button"
                       className="flex text-smrounded-full "
                       aria-expanded="false"
-                      data-dropdown-toggle="dropdown-user"
+                      onClick={toggleDropdown4}
                     >
                       <span className="sr-only">Open user menu</span>
                       <div
                         className="ms-2"
-                        data-dropdown-toggle="dropdown-user"
+                        nClick={toggleDropdown4}
                         data-dropdown-placement="bottom-start"
                       >
                         <div
@@ -232,10 +236,17 @@ export default function Navbar() {
                 )}
               </div>
               <div
-                className={`z-50 hidden my-4 text-base list-none bg-white ${
+                className={`z-50 ${
+                  isOpen4 ? "block" : "hidden"
+                } my-4 text-base list-none bg-white ${
                   getAccessToken() ? "divide-y divide-gray-100" : ""
                 } rounded shadow`}
-                id="dropdown-user"
+                style={{
+                  position: "absolute",
+                  right: "0px",
+                  top: "100%",
+                  marginTop: "0",
+                }}
               >
                 <ul className="py-1" role="none">
                   {userContentList.map((content, index) => {
