@@ -361,7 +361,7 @@ export default function LessonDetail() {
           } sm:translate-x-0 bg-white md:border-r border-gray-200`}
           aria-label="Sidebar"
         >
-          <div className="h-full px-4 w-[160px] overflow-y-auto bg-white pb-8">
+          <div className="h-full p-[0px] md:px-[16px] w-[160px] overflow-y-auto bg-white pb-8">
             <ul className="space-y-4 font-bold">
               {skillLevels.map((selectNameLevel) =>
                 selectNameLevel.exercises.map((excersice) => {

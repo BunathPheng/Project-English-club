@@ -336,7 +336,7 @@ export default function IELTSkillDetail() {
           } sm:translate-x-0 bg-white md:border-r border-gray-200`}
           aria-label="Sidebar"
         >
-          <div className="h-full px-3 w-[160px] overflow-y-auto bg-white pb-8 ">
+          <div className="h-full p-[0px] md:px-[16px] w-[160px] overflow-y-auto bg-white pb-8 ">
             <ul className="space-y-4 font-bold text-grays">
               {skillLevels.map((selectNameLevel) => {
                 // Sort exercises based on the number in the title

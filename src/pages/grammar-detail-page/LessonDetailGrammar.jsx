@@ -308,11 +308,15 @@ export default function LessonDetailGrammar() {
   };
 
   const sortedSections = [...(lessonsById?.sections || [])].sort((a, b) => {
-    const aIsGE = a?.title?.toLowerCase().includes("grammar explanation") || a?.title?.toLowerCase().includes("ge");
-    const bIsGE = b?.title?.toLowerCase().includes("grammar explanation") || b?.title?.toLowerCase().includes("ge");
-  
+    const aIsGE =
+      a?.title?.toLowerCase().includes("grammar explanation") ||
+      a?.title?.toLowerCase().includes("ge");
+    const bIsGE =
+      b?.title?.toLowerCase().includes("grammar explanation") ||
+      b?.title?.toLowerCase().includes("ge");
+
     if (aIsGE && !bIsGE) return -1; // a comes first
-    if (!aIsGE && bIsGE) return 1;  // b comes first
+    if (!aIsGE && bIsGE) return 1; // b comes first
     return 0; // keep original order if both are GE or neither is GE
   });
 
@@ -365,7 +369,7 @@ export default function LessonDetailGrammar() {
           } sm:translate-x-0 bg-white md:border-r border-gray-200`}
           aria-label="Sidebar"
         >
-          <div className="h-full px-4 w-[160px] overflow-y-auto bg-white pb-8 ">
+          <div className="h-full p-[0px] md:px-[16px] w-[160px] overflow-y-auto bg-white pb-8 ">
             <ul className="space-y-4 font-bold">
               {grammarLevel.map((grammarlevel) =>
                 grammarlevel.lessons.map((excersice) => {
@@ -434,24 +438,27 @@ export default function LessonDetailGrammar() {
                     <div className="px-4 border-2 bg-white rounded-xl">
                       {/* ko */}
                       {/* {lessonsById?.sections?.map((section, index) => { */}
-                      {sortedSections
-                        .map((section, index) => {
+                      {sortedSections.map((section, index) => {
                         // console.log("section", section);
                         return (
                           <>
                             <div className="mb-5 md:px-8 md:leading-10">
                               {section?.title
                                 .toLowerCase()
-                                .includes("grammar explanation") ||  section?.title
-                                .toLowerCase()
-                                .includes("ge")? (
+                                .includes("grammar explanation") ||
+                              section?.title.toLowerCase().includes("ge") ? (
                                 <>
                                   <div className="flex items-center mt-8 gap-3 text-primary">
-                                  <FaRegHandPointRight />
-                                  <h1 className="font-bold lg:text-[24px]  md:text-[20px]  text-[16px] flex-1">
-                                    {parse(`${section?.title.replace("GE", "Grammar Explanation")}`)}
-                                  </h1>
-                                </div>
+                                    <FaRegHandPointRight />
+                                    <h1 className="font-bold lg:text-[24px]  md:text-[20px]  text-[16px] flex-1">
+                                      {parse(
+                                        `${section?.title.replace(
+                                          "GE",
+                                          "Grammar Explanation"
+                                        )}`
+                                      )}
+                                    </h1>
+                                  </div>
                                 </>
                               ) : (
                                 <div className="flex items-center mt-8 gap-3 text-primary">
@@ -466,9 +473,8 @@ export default function LessonDetailGrammar() {
                               </p>
                               {section?.title
                                 .toLowerCase()
-                                .includes("grammar explanation") ||  section?.title
-                                .toLowerCase()
-                                .includes("ge")? (
+                                .includes("grammar explanation") ||
+                              section?.title.toLowerCase().includes("ge") ? (
                                 <></>
                               ) : (
                                 <>

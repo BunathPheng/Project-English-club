@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BsVolumeUp } from "react-icons/bs";
 import { useRef } from "react";
 import { FaRegHandPointRight } from "react-icons/fa";
-import parse from "html-react-parser"
+import parse from "html-react-parser";
 
 import {
   fetchExcersices,
@@ -196,7 +196,7 @@ export default function VocabularyDetail() {
           } sm:translate-x-0 bg-white md:border-r border-gray-200`}
           aria-label="Sidebar"
         >
-          <div className="h-full px-4 w-[160px] overflow-y-auto bg-white pb-8">
+          <div className="h-full p-[0px] md:px-[16px] w-[160px] overflow-y-auto bg-white pb-8">
             <ul className="space-y-4 font-bold">
               {vocabularylevel?.map((selectNameLevel) => {
                 return selectNameLevel?.lessons.map((excersice) => {
@@ -246,7 +246,9 @@ export default function VocabularyDetail() {
                       <div className="flex gap-4 mt-4 text-grays">
                         <BsPatchCheck className=" text-[40px] md:text-[30px] text-second md:block  hidden" />
                         <p className="md:text-lg md:line-clamp-none line-clamp-2">
-                        {parse(String(lessonsById?.description || "No description"))}
+                          {parse(
+                            String(lessonsById?.description || "No description")
+                          )}
                         </p>
                       </div>
                     </div>
