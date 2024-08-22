@@ -503,7 +503,7 @@ const SkillExerciseComponent = ({ exercise, key }) => {
                             <span>{`${qIndex + 1}.`}</span>
                             <p>{parse(question.question_text)}</p>
                           </div>
-                          {question.choices
+                          {[...question.choices] // Create a shallow copy of the choices array
                           .sort((a, b) => (a.text.toLowerCase() === "true" ? -1 : 1)) // Sort choices so that "true" comes first
                           .map((choice) => (
                             <div key={choice.choice_uuid}>
