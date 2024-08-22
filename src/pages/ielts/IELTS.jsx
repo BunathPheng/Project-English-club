@@ -98,7 +98,7 @@ export default function IELTS() {
                 <CardIELTS
                   key={index}
                   img={element.thumbnail}
-                  title={`IETLS-${element.skill_name}`}
+                  title={`IELTS-${element.skill_name}`}
                   des={element.description}
                 />
               </>
