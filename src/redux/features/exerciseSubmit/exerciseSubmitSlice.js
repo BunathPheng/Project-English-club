@@ -48,7 +48,7 @@ export const fetchSubmitExercisesByLevel = createAsyncThunk(
   async ({ user_uuid, token, level }, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `${apiUrl}/exercise/submit_answer/userId=${user_uuid}/level=${level}/`,
+        `${apiUrl}/exercise/submit_answer/userId=${user_uuid}/level=${level}`,
         {
           method: "GET",
           headers: {
