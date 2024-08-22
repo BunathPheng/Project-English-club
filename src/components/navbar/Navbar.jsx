@@ -58,7 +58,8 @@ export default function Navbar() {
   }, [dispatch, token]);
 
   const user = useSelector(selectUsers);
-  const userProfile = useSelector(selectUserProfile);
+  const profile = useSelector(selectUserProfile);
+  const userProfile = profile && profile.includes("http://136.228.158.126:50005") ? profile.replace("http://136.228.158.126:50005", "https://english-api.cstad.shop") : profile;
 
   const handleClick = () => {
     setClickCount(clickCount + 1); // Increment click count on any click
