@@ -16,7 +16,7 @@ export const fetchSubmitExercises = createAsyncThunk(
     async({ user_uuid, token }, { rejectWithValue }) => {
         try {
             const response = await fetch(
-                `${apiUrl}/exercise/submit_answer/user?id=${user_uuid}/`, {
+                `${apiUrl}/exercise/submit_answer/user?id=${user_uuid}`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
