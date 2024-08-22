@@ -14,12 +14,13 @@ import {
   fetchSubmitExercisesByLevel,
   selectSubmitExercisesByLevel,
 } from "../../redux/features/exerciseSubmit/exerciseSubmitSlice";
-const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-const toggleSidebar = () => {
-  setSidebarOpen(!isSidebarOpen);
-};
 export default function EachResult() {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
   const dispatch = useDispatch();
   const [token, setToken] = useState("");
 
