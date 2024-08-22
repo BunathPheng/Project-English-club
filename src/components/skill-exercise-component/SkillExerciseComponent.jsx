@@ -503,7 +503,9 @@ const SkillExerciseComponent = ({ exercise, key }) => {
                             <span>{`${qIndex + 1}.`}</span>
                             <p>{parse(question.question_text)}</p>
                           </div>
-                          {question.choices.map((choice) => (
+                          {question.choices
+                          .sort((a, b) => (a.text.toLowerCase() === "true" ? -1 : 1)) // Sort choices so that "true" comes first
+                          .map((choice) => (
                             <div key={choice.choice_uuid}>
                               <input
                                 className="me-3 cursor-pointer"
@@ -512,15 +514,9 @@ const SkillExerciseComponent = ({ exercise, key }) => {
                                 name={`choice-${question.q_uuid}`}
                                 value={choice.text}
                                 onChange={(e) =>
-                                  onAnswerChange(
-                                    question.q_uuid,
-                                    e.target.value
-                                  )
+                                  onAnswerChange(question.q_uuid, e.target.value)
                                 }
-                                checked={
-                                  selectedAnswers[question.q_uuid] ===
-                                  choice.text
-                                }
+                                checked={selectedAnswers[question.q_uuid] === choice.text}
                                 disabled={showResult}
                                 onClick={() =>
                                   unselectRadio(
@@ -535,8 +531,7 @@ const SkillExerciseComponent = ({ exercise, key }) => {
                                   showResult &&
                                   (choice.is_correct
                                     ? "text-green-500"
-                                    : selectedAnswers[question.q_uuid] ===
-                                      choice.text
+                                    : selectedAnswers[question.q_uuid] === choice.text
                                     ? "text-red-500"
                                     : "")
                                 }`}
