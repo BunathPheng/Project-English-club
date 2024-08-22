@@ -236,10 +236,10 @@ export default function Navbar() {
                 )}
               </div>
               <div
-                className={`z-50 ${
+                className={`z-50  ${
                   isOpen4 ? "block" : "hidden"
                 } my-4 text-base list-none bg-white ${
-                  getAccessToken() ? "divide-y divide-gray-100" : ""
+                  getAccessToken() ? "divide-y divide-gray-100" : "hidden"
                 } rounded shadow`}
                 style={{
                   position: "absolute",
