@@ -120,6 +120,7 @@ export default function Navbar() {
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
   const [isOpen4, setIsOpen4] = useState(false);
+  const [isOpen5, setIsOpen5] = useState(false);
   const toggleDropdown1 = () => {
     setIsOpen1(!isOpen1);
   };
@@ -131,6 +132,9 @@ export default function Navbar() {
   };
   const toggleDropdown4 = () => {
     setIsOpen4(!isOpen4);
+  };
+  const toggleDropdown5 = () => {
+    setIsOpen5(!isOpen5);
   };
   const skillList = [
     { data: "ការស្ដាប់", nav: "/skills/listening" },
@@ -272,7 +276,7 @@ export default function Navbar() {
                     >
                       <span className="flex flex-row gap-2 justify-start items-center">
                         <span className="text-lg">
-                          <FaPowerOff />{" "}
+                          <FaPowerOff />
                         </span>
                         <span>ការចាកចេញ</span>
                       </span>
@@ -697,10 +701,16 @@ export default function Navbar() {
         <div
           id="popup-modal"
           tabIndex="-1"
-          className="w-full hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center md:inset-0 h-[calc(100%-1rem)] max-h-full"
+          className={`${
+            isOpen5 ? "flex" : "hidden"
+          } w-full hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center md:inset-0 h-[calc(100%-1rem)] max-h-full`}
         >
           <div className="relative p-4 w-full max-w-md max-h-full">
-            <div className="md:w-[550px] md:right-16 lg:right-16 relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div
+              className={`${
+                isOpen5 ? "block" : ""
+              } md:w-[550px] md:right-16 lg:right-16 relative bg-white rounded-lg shadow dark:bg-gray-700`}
+            >
               <button
                 type="button"
                 className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
